@@ -41,7 +41,7 @@ def login(request):
         auth.save()
         return JsonResponse({'message': "Login Success", 'token': token}, status=200)
     else:
-        return JsonResponse({'message': "Login Failed"}, status=400)
+        return JsonResponse({'message': "Login Failed"}, status=200)
 
 
 def generate_authenticator():

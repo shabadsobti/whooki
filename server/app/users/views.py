@@ -25,7 +25,7 @@ def register_user(request):
 
 def check_username(request, username):
     if User.objects.filter(username=username).exists():
-        return JsonResponse({'message': "Username is taken, try something else."}, status=400)
+        return JsonResponse({'message': "Username is taken, try something else."}, status=200)
     else:
         return JsonResponse({'message': "Username is not taken."}, status=200)
 
@@ -39,7 +39,7 @@ def login(request):
         auth = Authenticator(user_id=User.objects.filter(
             username=username, password=password).first(), authenticator=token)
         auth.save()
-        return JsonResponse({'message': "Login Success"}, status=200)
+        return JsonResponse({'message': "Login Success", 'token': token}, status=200)
     else:
         return JsonResponse({'message': "Login Failed"}, status=400)
 

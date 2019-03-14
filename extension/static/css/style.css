@@ -8,6 +8,53 @@ body {
 
 }
 
+.logo-inline{
+  margin: 8px;
+}
+
+.posts{
+  height: 400px;
+  overflow-y: scroll;
+  background-color: #fcfcfc;
+  padding: 10px;
+
+}
+.post_text{
+  padding-left: 6px;
+}
+.post_header{
+  /* background-color: red; */
+  width: 100%;
+    padding-left: 1px;
+      font-family: 'Source Serif Pro', serif;
+      color: #05668c;
+  text-align: left;
+
+}
+
+.post_content{
+  margin: 10px;
+    font-family: 'Source Serif Pro', serif;
+    color: #081d42;
+    text-align: left;
+
+  /* background-color: blue; */
+}
+
+.add-post input[type=text]{
+  width: 300px;
+  float: left;
+  outline: none;
+}
+
+.add-post input[type=submit]{
+  margin: 5px !important;
+  padding: 11px !important;
+  height: 55px !important;
+  outline: none;
+}
+
+
 h1 {
     font-size: 25px;
     text-align: center;
@@ -41,6 +88,8 @@ h1 {
 
 /* FORM TYPOGRAPHY*/
 
+
+
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #02023E;
   border: none;
@@ -50,6 +99,7 @@ input[type=button], input[type=submit], input[type=reset]  {
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
+  outline: none;
 
   font-size: 13px;
   -webkit-border-radius: 5px 5px 5px 5px;
@@ -78,6 +128,7 @@ input[type=text] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
+  outline: none;
   padding: 15px 32px;
   font-family: 'Source Serif Pro', serif;
   text-align: center;

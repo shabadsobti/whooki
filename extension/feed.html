@@ -4,7 +4,6 @@
         <title>Click It</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-
         <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
         <link href="/static/css/style.css" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,11 +12,41 @@
     <body>
       <div class="container">
         <div class="text-center">
-          <h1> Feed </h1>
+          <div class="logo-inline"> <img src="/static/images/icon-left-font.png" width="250" class="logo img-fluid center-block img-responsive"> </div>
 
-          <a id= "logout" href="#"> Logout</a>
-        <img src="/static/images/icon-above-font.png" width="250" class="logo img-fluid center-block img-responsive">
+          <div id = "posts" class="posts">
+            <!-- <div class="post_content">
+              <div class="post_header">  shabad  </div>
+              <div class="post_text">
+              What do you guys think about the cards?
+            </div>
+            </div>
+            <div class="post_content">
+              <div class="post_header"> shabad </div>
+              sdd
+            </div>
+            <div class="post_content">
+              <div class="post_header"> shabad </div>
+              sdd
+            </div> -->
+
+          </div>
+
+          <div class="add-post">
+          <form id = "form">
+            <input type="text" id = "text">
+            <input type="submit"  value="add">
+          </form>
+          </div>
+
+
+
+
+
       </div>
+    <div>
+      <a id= "logout" href="#"> Logout</a>
+    </div>
 
   </div>
 

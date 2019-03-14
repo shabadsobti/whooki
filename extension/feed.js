@@ -36,7 +36,7 @@ chrome.storage.local.get('auth_token', function(profileObj) {
             }
 
             jQuery.each(msg, function(index, item) {
-              $( "#posts" ).append( "<div class='post_content'> <div class='post_header'>" + item.user_id + "</div> <div class='post_text'>"  + item.text + "</div> </div>" );
+              $( "#posts" ).append( "<div class='post_content'> <div class='post_header'>" + item.user_id + " " + "</div> <div class='post_text'>"  + item.text + "</div> </div>" );
                 console.log(item.user_id)
 
             });
@@ -92,6 +92,7 @@ $('#form').submit(function (event) {
                 var obj = jQuery.parseJSON(newData);
                 if(obj.message == "Post has been added"){
                   console.log("Post has been added");
+                  location.reload();
                 }
                 else{
                   console.log("Not Logged IN");

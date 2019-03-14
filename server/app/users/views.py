@@ -8,17 +8,23 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 import hmac
 from django.conf import settings
+from django.contrib.auth.hashers import make_password, check_password
 
 
 @csrf_exempt
 def register_user(request):
     if request.method == "POST":
-        form_data = UserRegisterForm(request.POST)
-        if form_data.is_valid():
-            form = form_data.save()
+        username = request.POST['username']
+        password = request.POST['password']
+        email = request.POST['email']
+        hash_password = make_password(password, salt=None, hasher='default')
+        user = User(username=username, password=hash_password, email=email)
+        try:
+            user.save()
             return JsonResponse({'message': "You have been registered"}, status=200)
-        else:
+        except Exception as e:
             return JsonResponse({'message': "There was an error"}, status=400)
+
     else:  # Get Request not permitted
         return JsonResponse({'message': "GET Request not allowed"}, status=400)
 
@@ -34,10 +40,12 @@ def check_username(request, username):
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
-    if User.objects.filter(username=username, password=password).exists():
+    hash_password = User.objects.get(pk=username).password
+
+    if User.objects.filter(username=username).exists() and check_password(password, hash_password) is True:
         token = generate_authenticator()
         auth = Authenticator(user_id=User.objects.filter(
-            username=username, password=password).first(), authenticator=token)
+            username=username).first(), authenticator=token)
         auth.save()
         return JsonResponse({'message': "Login Success", 'token': token}, status=200)
     else:

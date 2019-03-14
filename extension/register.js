@@ -1,3 +1,9 @@
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+
 $('#form').submit(function (event) {
     event.preventDefault();
     console.log("PRessed");
@@ -9,11 +15,15 @@ $('#form').submit(function (event) {
     var email = $('#email').val();
     var username = $('#username').val();
     var password = $('#password').val();
-    if (email == ""){
+
+
+
+    if (email == "" || !isEmail(email)){
       errors = errors+1;
       console.log("Email is empty")
       $("#email-error").html('').html('<i class="fas fa-exclamation-circle"></i> ');
     }
+
 
     if (password == ""){
       errors = errors+1;

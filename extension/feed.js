@@ -35,11 +35,17 @@ chrome.storage.local.get('auth_token', function(profileObj) {
               window.location.href = "login.html";
             }
 
+            if(msg.length == 0){
+              console.log("Empty");
+              $("#posts").append("<p class = 'empty-posts'> Looks like you just discovered a new whooki! Be the first one to post! </p>")
+            }
+            else{
             jQuery.each(msg, function(index, item) {
               $( "#posts" ).append( "<div class='post_content'> <div class='post_header'>" + item.user_id + " " + "</div> <div class='post_text'>"  + item.text + "</div> </div>" );
                 console.log(item.user_id)
 
             });
+          }
 
           },
       });

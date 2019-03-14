@@ -71,6 +71,9 @@ button.link:focus span {
   /* background-color: blue; */
 }
 
+.add-post{
+  margin-top:15px;
+}
 .add-post input[type=text]{
   width: 300px;
   float: left;
@@ -154,7 +157,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], input[type = password] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -177,7 +180,7 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=password]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
@@ -234,9 +237,15 @@ input[type=text]:placeholder {
 
 .login-options{
   text-align: center;
+  font-family: 'Source Serif Pro', serif;
 
 }
 .login-options a{
+  color: #414199;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.empty-posts{
   color: #414199;
   font-family: 'Source Serif Pro', serif;
 }

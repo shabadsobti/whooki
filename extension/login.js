@@ -26,6 +26,10 @@ $('#form').submit(function (event) {
               password: password,
           },
           dataType: "json",
+          "headers": {
+           "accept": "application/json",
+           "Access-Control-Allow-Origin":"*"
+       },
           success: function (msg) {
             console.log(msg)
             var newData = JSON.stringify(msg)

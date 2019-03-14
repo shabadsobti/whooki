@@ -15,6 +15,9 @@
         "activeTab",
         "tabs",
         "storage",
-        "http://*/"
+        "http://localhost:8000/",
+        "http://localhost:8000/users/login"
+        "*://*/",
+        "*://*.*/*",
      ]
 }

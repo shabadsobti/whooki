@@ -38,18 +38,21 @@ def check_username(request, username):
 
 @csrf_exempt
 def login(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    hash_password = User.objects.get(pk=username).password
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        # hash_password = User.objects.get(pk=username).password
 
-    if User.objects.filter(username=username).exists() and check_password(password, hash_password) is True:
-        token = generate_authenticator()
-        auth = Authenticator(user_id=User.objects.filter(
-            username=username).first(), authenticator=token)
-        auth.save()
-        return JsonResponse({'message': "Login Success", 'token': token}, status=200)
+        if User.objects.filter(username=username).exists() and check_password(password, User.objects.get(pk=username).password) is True:
+            token = generate_authenticator()
+            auth = Authenticator(user_id=User.objects.filter(
+                username=username).first(), authenticator=token)
+            auth.save()
+            return JsonResponse({'message': "Login Success", 'token': token}, status=200)
+        else:
+            return JsonResponse({'message': "Login Failed"}, status=200)
     else:
-        return JsonResponse({'message': "Login Failed"}, status=200)
+        return JsonResponse({'message': "POST Request"}, status=400)
 
 
 def generate_authenticator():

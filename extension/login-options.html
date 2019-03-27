@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Click It</title>
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+        <link href="/static/css/style-options.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body>
+      <div class="container">
+        <div class="text-center">
+        <img src="/static/images/icon-above-font.png" width="250" class="logo img-fluid center-block img-responsive">
+      </div>
+
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <span id = "message"> </span>
+          <form id = "form">
+        <input type="text" id="username" class="fadeIn second" name="login" placeholder="Username"><span id = "username-error"></span>
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password"><span id = "password-error"></span>
+        <input type="submit" class="fadeIn fourth" value="Log In">
+          </form>
+      </div>
+    </div>
+    <div class="login-options">
+      Not Registered? <a href="register.html">Register</a>
+    </div>
+
+<!--
+        <div id = "url">
+        </div>
+      </div> -->
+
+    </body>
+        <script src="static/js/jquery.min.js"></script>
+    <script src="login-options.js"></script>
+</html>
